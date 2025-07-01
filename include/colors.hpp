@@ -1,0 +1,16 @@
+#define BASE_00 0x1a1b26
+#define BASE_01 0x16161e
+#define BASE_02 0x2f3549
+#define BASE_03 0x444b6a
+#define BASE_04 0x787c99
+#define BASE_05 0xa9b1d6
+#define BASE_06 0xcbccd1
+#define BASE_07 0xd5d6db
+#define BASE_08 0xc0caf5
+#define BASE_09 0xa9b1d6
+#define BASE_0A 0x0db9d7
+#define BASE_0B 0x9ece6a
+#define BASE_0C 0xb4f9f8
+#define BASE_0D 0x2ac3de
+#define BASE_0E 0xbb9af7
+#define BASE_0F 0xf7768e

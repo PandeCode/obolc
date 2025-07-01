@@ -1,0 +1,11 @@
+.direnv
+.cache
+.qt
+
+CMakeFiles
+build
+bin
+
+compile_commands.json
+.gdb_history
+flake.lock
