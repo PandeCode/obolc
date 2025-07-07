@@ -22,4 +22,4 @@ release:
 	@cmake --build $(BUILD_DIR)-release
 
 clean:
-	@rm -rf build build-debug build-release
+	@rm -rf build build-debug build-release assets/style.css

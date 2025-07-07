@@ -28,10 +28,13 @@ rec {
       pkg-config
       qt6.wrapQtAppsHook
       patchelf
+      dart-sass
     ];
 
     devTools = with pkgs; [
+      qtcreator
       clang-tools
+
       ccls
       rr
       inotify-tools
@@ -41,6 +44,10 @@ rec {
       include-what-you-use
       rr
       cppcheck
+      prettier
+      lldb
+
+      gammaray
     ];
   in {
     devShells.${system}.default = pkgs.mkShell {
@@ -48,6 +55,7 @@ rec {
       shellHook = ''
         export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath buildInputs}:$LD_LIBRARY_PATH
         export INCLUDE_PATH=${pkgs.lib.makeIncludePath buildInputs}:$INCLUDE_PATH
+        # export NIX_CFLAGS_COMPILE="$NIX_CFLAGS_COMPILE -isystem ${pkgs.libcxx.dev}/include/c++/v1"
         echo "🚀 obolc devshell ready!"
       '';
     };
@@ -64,8 +72,7 @@ rec {
       '';
 
       installPhase = ''
-        mkdir -p $out/bin
-        cp ${pname} $out/bin/${pname}
+        cmake --install . --prefix $out
       '';
 
       postBuild = ''
@@ -90,7 +97,7 @@ rec {
   description = "obolc - Qt6 system panel";
 
   nixConfig = {
-    experimental-features = ["nix-command" "flakes" "pipe-operators"];
+    experimental-features = ["nix-command" "flakes"];
     accept-flake-config = true;
     show-trace = true;
 

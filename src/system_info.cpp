@@ -86,7 +86,7 @@ void SystemMonitor::updateCpuUsage() {
 
       if (totalDiff > 0) {
         m_systemInfo.cpuUsage =
-            ((double)(totalDiff - idleDiff) / totalDiff) * 100.0;
+            (static_cast<double>((totalDiff - idleDiff) / totalDiff)) * 100.0;
       }
     }
 
@@ -118,12 +118,12 @@ void SystemMonitor::updateMemoryUsage() {
 
   if (memTotal > 0) {
     m_systemInfo.memoryUsage =
-        ((double)(memTotal - memAvailable) / memTotal) * 100.0;
+        (static_cast<double>((memTotal - memAvailable) / memTotal)) * 100.0;
   }
 
   if (swapTotal > 0) {
     m_systemInfo.swapUsage =
-        ((double)(swapTotal - swapFree) / swapTotal) * 100.0;
+        (static_cast<double>((swapTotal - swapFree) / swapTotal)) * 100.0;
   }
 }
 

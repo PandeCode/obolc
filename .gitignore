@@ -1,5 +1,6 @@
 .direnv
 .cache
+.ccls-cache
 .qt
 
 CMakeFiles
@@ -8,3 +9,5 @@ bin
 
 compile_commands.json
 .gdb_history
+
+assets/styles.css

@@ -18,13 +18,23 @@
 #include <QWidget>
 #include <QWindow>
 
+#include "media_window.hpp"
+#include "mpris.hpp"
 #include "system_info.hpp"
+#include "tray.hpp"
 
 class Panel : public QWidget {
   Q_OBJECT
 
+  uint8_t m_panelHeight = 42;
+
 public:
   Panel(QWidget *parent = nullptr);
+  void setupMediaWindow(MediaWindow *mediaWindow);
+  void setupMpris(Mpris *mpris);
+  MediaWindow *m_mediaWindow;
+  Mpris *m_mpris;
+  void onMediaClicked();
 
 private:
   SystemMonitor *m_systemMonitor;
@@ -35,9 +45,11 @@ private:
   QLabel *m_cpuLabel;
   QLabel *m_memoryLabel;
   QLabel *m_swapLabel;
-  QLabel *m_mediaLabel;
+  QPushButton *m_mediaBtn;
   QPushButton *m_menuButton;
   QTimer *m_clockTimer;
+
+  Tray *m_tray;
 
   void setupWindow();
   void setupUI();

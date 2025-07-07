@@ -1,0 +1,80 @@
+QWidget {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+QLabel,
+QButton,
+Q {
+  padding: 4px 8px;
+  margin: 2px;
+  border-radius: 4px;
+}
+
+QButton {
+  border: none;
+  outline: none;
+}
+
+QButton:hover {
+  outline: none;
+}
+
+QButton:pressed {
+  outline: none;
+}
+
+.start {
+  background-color: #313244;
+  color: #cdd6f4;
+}
+
+.start:hover {
+  background-color: #585b70;
+}
+
+.workspace {
+  background-color: #313244;
+  color: #fab387;
+  font-weight: bold;
+}
+
+.window {
+  background-color: #11111b;
+  color: #94e2d5;
+  max-width: 300px;
+}
+
+.cpu {
+  background-color: #11111b;
+  color: #f38ba8;
+}
+
+.memory {
+  background-color: #11111b;
+  color: #a6e3a1;
+}
+
+.swap {
+  background-color: #11111b;
+  color: #f9e2af;
+}
+
+.time {
+  background-color: #313244;
+  color: #89b4fa;
+  font-weight: bold;
+}
+
+.date {
+  background-color: #11111b;
+  color: #cba6f7;
+}
+
+.mediaBtn {
+  background-color: #11111b;
+  color: #cba6f7;
+}
